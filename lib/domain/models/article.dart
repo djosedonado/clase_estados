@@ -30,7 +30,7 @@ Map<String, dynamic> art = {
   "vrUnitario": 849.900
 };
 
-List<Articulo> listaGral = [
+List<Articulo> listaOriginal = [
   Articulo.Crear(art),
   Articulo.Crear(art),
   Articulo.Crear(art),
