@@ -1,5 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class AddArticulo extends StatefulWidget {
   const AddArticulo({super.key});
@@ -12,6 +13,9 @@ class AddArticulo extends StatefulWidget {
 class _AddArticuloState extends State<AddArticulo> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(title: Text("Carrito de Compras")),
+      body: Container(child: Text("hola"),),
+    );
   }
 }

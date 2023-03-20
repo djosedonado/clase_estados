@@ -1,8 +1,6 @@
 import 'package:clase_estados/domain/controller/gestionarticulos.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class ListaArticulos extends StatefulWidget {
   const ListaArticulos({super.key});
@@ -58,7 +56,12 @@ class _ListaArticulosState extends State<ListaArticulos> {
                               ),
                               Container(
                                 padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                                child: Icon(Icons.add_circle),
+                                child: FloatingActionButton(
+                                  onPressed: () {
+                                    
+                                  },
+                                  child: Icon(Icons.add_circle),
+                                ),
                               )
                             ],
                           ),
