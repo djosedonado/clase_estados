@@ -21,17 +21,58 @@ class _ListaArticulosState extends State<ListaArticulos> {
       ),
       body: GridView.builder(
           gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2),
-                itemCount: controlc.listaFinal.length,
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
+          itemCount: controlc.listaFinal.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
-                width: 50,
-                height: 50,
-                color: Colors.blue,
-                child: Center(child: Text(controlc.listaFinal[index].detalle)),
+              child: LimitedBox(
+                maxWidth: MediaQuery.of(context).size.height,
+                maxHeight: 200,
+                child: Row(
+                  children: [
+                    LimitedBox(
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        height: 250,
+                        child: Image.network(controlc.listaFinal[index].foto),
+                      ),
+                    ),
+                    LimitedBox(
+                      maxWidth: 80,
+                      child: Center(
+                        child: Container(
+                          padding: EdgeInsets.all(10.0),
+                          child: ListView(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.fromLTRB(0, 100, 0, 0),
+                                child: Text(
+                                    textAlign: TextAlign.justify,
+                                    controlc.listaFinal[index].detalle),
+                              ),
+                              Container(
+                                padding: EdgeInsets.fromLTRB(0, 70, 0, 0),
+                                child: Text(
+                                    "Valor ${controlc.listaFinal[index].vrUnitario}"),
+                              ),
+                              Container(
+                                padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                child: Icon(Icons.add_circle),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                          textAlign: TextAlign.right,
+                          "${controlc.listaFinal[index].exitencia}"),
+                    )
+                  ],
+                ),
               ),
             );
           }),
